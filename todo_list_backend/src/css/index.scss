@@ -1,0 +1,439 @@
+$red: rgb(255, 172, 172);
+$dark-red: rgb(255, 137, 137);
+
+$orange: rgb(255, 204, 137);
+$dark-orange: rgb(250, 186, 91);
+
+$yellow: rgb(255, 253, 152);
+$dark-yellow: rgb(255, 252, 73);
+
+$green: rgb(201, 233, 157);
+$dark-green: rgb(160, 228, 127);
+
+$blue: rgb(180, 245, 247);
+$dark-blue: rgb(136, 228, 235);
+
+$indigo: rgb(172, 198, 255);
+$dark-indigo: rgb(138, 179, 255);
+
+$purple: rgb(213, 190, 252);
+$dark-purple: rgb(195, 166, 253);
+
+$pink: rgb(252, 194, 255);
+$dark-pink: rgb(251, 172, 255);
+
+$gray: rgb(218, 218, 218);
+$dark-gray: rgb(201, 201, 201);
+
+$black: rgb(94, 94, 94);
+$dark-black: rgb(0, 0, 0);
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+#todoEdit {
+    display: none;
+}
+
+.todoTitle {
+    background-color: $dark-yellow;
+    width: 60%;
+    height: 80px;
+    font-size: 24px;
+    line-height: 80px;
+    display: flex;
+    position: relative;
+
+    .todoSpan {
+        position: absolute;
+        top: 0;
+        right: 5%;
+        display: flex;
+
+        span {
+            margin-left: 30px;
+        }
+
+    }
+}
+
+.todoInlineTitle {
+    display: flex;
+
+    .fas {
+        cursor: pointer;
+    }
+}
+
+.todoInlineDiv {
+    width: 60%;
+
+    #indexUl {
+        background-color: $yellow;
+    }
+
+    #editUl {
+        background-color: $yellow;
+    }
+
+    .todoItem {
+
+        .complete {
+            color: gray;
+
+            p {
+                text-decoration: line-through;
+            }
+        }
+
+        .todoInlineItem {
+            font-size: 20px;
+            height: 60px;
+            line-height: 60px;
+            position: relative;
+            cursor: pointer;
+
+            p {
+                position: absolute;
+                top: 0;
+                left: 5%;
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                right: 5%;
+            }
+
+            .fas {
+                cursor: pointer;
+            }
+
+            .fa-plus-circle {
+                margin-right: 20px;
+            }
+
+            .fa-sort {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+#addModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+
+    .addModalDiv {
+        margin-top: 20%;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        width: 50%;
+        height: 280px;
+
+        span {
+            text-align: end;
+            width: 90%;
+
+            .fa-times {
+                margin-top: 2%;
+                font-size: 32px;
+                cursor: pointer;
+            }
+        }
+
+        p {
+            font-size: 32px;
+            font-weight: bolder;
+            margin-top: 2%;
+        }
+
+        input[type="text"] {
+            margin-top: 10%;
+            height: 15%;
+            width: 80%;
+            font-size: 18px;
+            border: 1px solid $dark-black;
+            border-radius: 5px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
+
+        .buttonDiv {
+            text-align: end;
+            width: 80%;
+
+            #addBtn {
+                margin-top: 12%;
+                width: 50%;
+                height: 60%;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: $yellow;
+            }
+        }
+    }
+}
+
+#colorModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+
+    .colorModalDiv {
+        margin-top: 20%;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        width: 50%;
+        height: 320px;
+
+        span {
+            text-align: end;
+            width: 90%;
+
+            .fa-times {
+                margin-top: 2%;
+                font-size: 32px;
+                cursor: pointer;
+            }
+        }
+
+        p {
+            font-size: 32px;
+            font-weight: bolder;
+            margin-top: 2%;
+            margin-bottom: 1%;
+        }
+
+        .buttonDiv {
+            width: 80%;
+
+            input[type="button"] {
+                width: 48%;
+                height: 25px;
+                margin: 2% 1%;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            #red {
+                background-color: $red;
+
+            }
+
+            #red:hover {
+                background-color: $dark-red;
+            }
+
+            #orange {
+                background-color: $orange;
+
+            }
+
+            #orange:hover {
+                background-color: $dark-orange;
+            }
+
+            #yellow {
+                background-color: $yellow;
+
+            }
+
+            #yellow:hover {
+                background-color: $dark-yellow;
+            }
+
+            #green {
+                background-color: $green;
+
+            }
+
+            #green:hover {
+                background-color: $dark-green;
+            }
+
+            #blue {
+                background-color: $blue;
+
+            }
+
+            #blue:hover {
+                background-color: $dark-blue;
+            }
+
+            #indigo {
+                background-color: $indigo;
+
+            }
+
+            #indigo:hover {
+                background-color: $dark-indigo;
+            }
+
+            #purple {
+                background-color: $purple;
+
+            }
+
+            #purple:hover {
+                background-color: $dark-purple;
+            }
+
+            #pink {
+                background-color: $pink;
+
+            }
+
+            #pink:hover {
+                background-color: $dark-pink;
+            }
+
+            #gray {
+                background-color: $gray;
+
+            }
+
+            #gray:hover {
+                background-color: $dark-gray;
+            }
+
+            #black {
+                background-color: $black;
+
+            }
+
+            #black:hover {
+                background-color: $dark-black;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #addModal {
+
+        .addModalDiv {
+            margin-top: 10%;
+            height: 400px;
+
+            .buttonDiv {
+                #addBtn {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    #colorModal {
+
+        .colorModalDiv {
+            margin-top: 10%;
+            height: 400px;
+        }
+    }
+}
+
+@media screen and (min-width:920px) {}
+
+@media screen and (min-width:768px) {}
+
+@media screen and (max-width:576px) {
+    .todoTitle {
+        width: 100%;
+    }
+
+    .todoInlineDiv {
+        width: 100%;
+    }
+
+    #addModal {
+
+        .addModalDiv {
+            margin-top: 20%;
+            width: 80%;
+            height: 280px;
+
+            .buttonDiv {
+                width: 80%;
+
+                #addBtn {
+                    width: 100%;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    #colorModal {
+
+        .colorModalDiv {
+            margin-top: 20%;
+            width: 80%;
+            height: 380px;
+
+            .buttonDiv {
+                width: 80%;
+
+                input[type="button"] {
+                    width: 48%;
+                    height: 40px;
+                    margin: 2% 1%;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width:480px) {
+    .todoTitle {
+        .todoSpan {
+            span {
+                margin-left: 0px;
+            }
+
+        }
+    }
+
+    .todoInlineTitle {
+
+        .fa-palette {
+            position: fixed;
+            top: 30px;
+            left: 20px;
+        }
+    }
+}

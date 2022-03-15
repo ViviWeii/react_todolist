@@ -1,0 +1,376 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+#todoEdit {
+  display: none;
+}
+
+.todoTitle {
+  background-color: #fffc49;
+  width: 60%;
+  height: 80px;
+  font-size: 24px;
+  line-height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.todoTitle .todoSpan {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todoTitle .todoSpan span {
+  margin-left: 30px;
+}
+
+.todoInlineTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todoInlineTitle .fas {
+  cursor: pointer;
+}
+
+.todoInlineDiv {
+  width: 60%;
+}
+
+.todoInlineDiv #indexUl {
+  background-color: #fffd98;
+}
+
+.todoInlineDiv #editUl {
+  background-color: #fffd98;
+}
+
+.todoInlineDiv .todoItem .complete {
+  color: gray;
+}
+
+.todoInlineDiv .todoItem .complete p {
+  text-decoration: line-through;
+}
+
+.todoInlineDiv .todoItem .todoInlineItem {
+  font-size: 20px;
+  height: 60px;
+  line-height: 60px;
+  position: relative;
+  cursor: pointer;
+}
+
+.todoInlineDiv .todoItem .todoInlineItem p {
+  position: absolute;
+  top: 0;
+  left: 5%;
+}
+
+.todoInlineDiv .todoItem .todoInlineItem span {
+  position: absolute;
+  top: 0;
+  right: 5%;
+}
+
+.todoInlineDiv .todoItem .todoInlineItem .fas {
+  cursor: pointer;
+}
+
+.todoInlineDiv .todoItem .todoInlineItem .fa-plus-circle {
+  margin-right: 20px;
+}
+
+.todoInlineDiv .todoItem .todoInlineItem .fa-sort {
+  margin-right: 20px;
+}
+
+#addModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+#addModal .addModalDiv {
+  margin-top: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  width: 50%;
+  height: 280px;
+}
+
+#addModal .addModalDiv span {
+  text-align: end;
+  width: 90%;
+}
+
+#addModal .addModalDiv span .fa-times {
+  margin-top: 2%;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+#addModal .addModalDiv p {
+  font-size: 32px;
+  font-weight: bolder;
+  margin-top: 2%;
+}
+
+#addModal .addModalDiv input[type="text"] {
+  margin-top: 10%;
+  height: 15%;
+  width: 80%;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#addModal .addModalDiv input[type="text"]:focus {
+  outline: none;
+}
+
+#addModal .addModalDiv .buttonDiv {
+  text-align: end;
+  width: 80%;
+}
+
+#addModal .addModalDiv .buttonDiv #addBtn {
+  margin-top: 12%;
+  width: 50%;
+  height: 60%;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fffd98;
+}
+
+#colorModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+#colorModal .colorModalDiv {
+  margin-top: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  width: 50%;
+  height: 320px;
+}
+
+#colorModal .colorModalDiv span {
+  text-align: end;
+  width: 90%;
+}
+
+#colorModal .colorModalDiv span .fa-times {
+  margin-top: 2%;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+#colorModal .colorModalDiv p {
+  font-size: 32px;
+  font-weight: bolder;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+#colorModal .colorModalDiv .buttonDiv {
+  width: 80%;
+}
+
+#colorModal .colorModalDiv .buttonDiv input[type="button"] {
+  width: 48%;
+  height: 25px;
+  margin: 2% 1%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#colorModal .colorModalDiv .buttonDiv #red {
+  background-color: #ffacac;
+}
+
+#colorModal .colorModalDiv .buttonDiv #red:hover {
+  background-color: #ff8989;
+}
+
+#colorModal .colorModalDiv .buttonDiv #orange {
+  background-color: #ffcc89;
+}
+
+#colorModal .colorModalDiv .buttonDiv #orange:hover {
+  background-color: #faba5b;
+}
+
+#colorModal .colorModalDiv .buttonDiv #yellow {
+  background-color: #fffd98;
+}
+
+#colorModal .colorModalDiv .buttonDiv #yellow:hover {
+  background-color: #fffc49;
+}
+
+#colorModal .colorModalDiv .buttonDiv #green {
+  background-color: #c9e99d;
+}
+
+#colorModal .colorModalDiv .buttonDiv #green:hover {
+  background-color: #a0e47f;
+}
+
+#colorModal .colorModalDiv .buttonDiv #blue {
+  background-color: #b4f5f7;
+}
+
+#colorModal .colorModalDiv .buttonDiv #blue:hover {
+  background-color: #88e4eb;
+}
+
+#colorModal .colorModalDiv .buttonDiv #indigo {
+  background-color: #acc6ff;
+}
+
+#colorModal .colorModalDiv .buttonDiv #indigo:hover {
+  background-color: #8ab3ff;
+}
+
+#colorModal .colorModalDiv .buttonDiv #purple {
+  background-color: #d5befc;
+}
+
+#colorModal .colorModalDiv .buttonDiv #purple:hover {
+  background-color: #c3a6fd;
+}
+
+#colorModal .colorModalDiv .buttonDiv #pink {
+  background-color: #fcc2ff;
+}
+
+#colorModal .colorModalDiv .buttonDiv #pink:hover {
+  background-color: #fbacff;
+}
+
+#colorModal .colorModalDiv .buttonDiv #gray {
+  background-color: #dadada;
+}
+
+#colorModal .colorModalDiv .buttonDiv #gray:hover {
+  background-color: #c9c9c9;
+}
+
+#colorModal .colorModalDiv .buttonDiv #black {
+  background-color: #5e5e5e;
+}
+
+#colorModal .colorModalDiv .buttonDiv #black:hover {
+  background-color: black;
+}
+
+@media screen and (min-width: 1200px) {
+  #addModal .addModalDiv {
+    margin-top: 10%;
+    height: 400px;
+  }
+  #addModal .addModalDiv .buttonDiv #addBtn {
+    font-size: 18px;
+  }
+  #colorModal .colorModalDiv {
+    margin-top: 10%;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .todoTitle {
+    width: 100%;
+  }
+  .todoInlineDiv {
+    width: 100%;
+  }
+  #addModal .addModalDiv {
+    margin-top: 20%;
+    width: 80%;
+    height: 280px;
+  }
+  #addModal .addModalDiv .buttonDiv {
+    width: 80%;
+  }
+  #addModal .addModalDiv .buttonDiv #addBtn {
+    width: 100%;
+    height: 40px;
+  }
+  #colorModal .colorModalDiv {
+    margin-top: 20%;
+    width: 80%;
+    height: 380px;
+  }
+  #colorModal .colorModalDiv .buttonDiv {
+    width: 80%;
+  }
+  #colorModal .colorModalDiv .buttonDiv input[type="button"] {
+    width: 48%;
+    height: 40px;
+    margin: 2% 1%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .todoTitle .todoSpan span {
+    margin-left: 0px;
+  }
+  .todoInlineTitle .fa-palette {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+  }
+}
+/*# sourceMappingURL=index.css.map */
